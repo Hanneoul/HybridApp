@@ -1,29 +1,43 @@
 <!-- https://v3-docs.vuejs-korea.org/  -->
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Component 실습</title>
 </head>
 <body>
     <script src="https://unpkg.com/vue@3"></script>
     <!-- vue프레임웍을 사용한 예시-->
-    <div id="app">{{ message }}</div>
+    <div id="app">
+        <button @click="count++;">고백해보자</button>
+        <br>
+        <p>이은석님께선 {{ count }}번 차였습니다</p>
+    </div>
+
+    <div id="testApp">
+        <button @click="count++;">고백해보자</button>
+        <br>
+        <p>김준석님께선 <b v-html="style"></b>번 차였습니다</p>
+    </div>
+
     <script>
         const {createApp} = Vue;
-
         createApp({
             data() {
-                return {
-                    message : "hello~world"
+                return {                    
+                    count : 0,
                 }
-            }
-        }).mount("#app")
-    </script>
-    
+            },
+            mounted(){
+                console.log("app 마운트 성공!");
+            },
+        }).mount("#app");
 
+        createApp({
+            data()      { return {  
+                                    style : "<span style='color: red'>1</span>" }  },
+            mounted()   { console.log("testApp 마운트 성공!"); },
+        }).mount("#testApp")
+
+        
+    </script>    
 </body>
 </html>
