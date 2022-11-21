@@ -2,33 +2,19 @@
 <html lang="en">
 <head>
     <title>2048 실습</title>
+    <link rel="stylesheet" href="css/app2048.css" type="text/css">
 </head>
 <body>
     <script src="https://unpkg.com/vue@3"></script>
     
-    <style>
-        #app{
-            width: 600px;
-            height: 600px;
-            background-color: beige;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            grid-template-rows: 1fr 1fr 1fr 1fr;
-            grid-gap: 10px;
-            padding : 10px;           
-        }
-        .backblock{            
-            background-color: burlywood;
-        }
-    </style>
-
     <div id="app">
-        <div class="backblock" v-for="index in backblocks"></div>        
+        <div class="backblock" v-for="index in backblocks">{{index}}</div>        
+        <div class="blockPrefab">2</div>        
     </div>
-
     
-
-    <script>
+    <script type="text/javascript" src="js/main.js"></script>
+        
+    <script type="text/javascript">
         const {createApp} = Vue;
         createApp({
             data() {
@@ -40,6 +26,7 @@
                 console.log("app 마운트 성공!");
             },
         }).mount("#app");
-    </script>    
+
+    </script>
 </body>
 </html>
