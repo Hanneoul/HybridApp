@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>보노보노 그리기</title>
+</head>
+<body>
+  <canvas id="bonobonoCanvas" width="400" height="400"></canvas>
+
+  <script>
+    const canvas = document.getElementById('bonobonoCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // 원 그리기 (머리)
+    ctx.beginPath();
+    ctx.arc(200, 100, 80, 0, 2 * Math.PI);
+    ctx.fillStyle = '#ffcc66';
+    ctx.fill();
+
+    // 삼각형 그리기 (귀)
+    ctx.beginPath();
+    ctx.moveTo(120, 80);
+    ctx.lineTo(160, 20);
+    ctx.lineTo(200, 100);
+    ctx.fillStyle = '#ffcc66';
+    ctx.fill();
+
+    // 삼각형 그리기 (귀)
+    ctx.beginPath();
+    ctx.moveTo(280, 80);
+    ctx.lineTo(240, 20);
+    ctx.lineTo(200, 100);
+    ctx.fillStyle = '#ffcc66';
+    ctx.fill();
+
+    // 눈 그리기
+    ctx.beginPath();
+    ctx.arc(170, 70, 10, 0, 2 * Math.PI);
+    ctx.arc(230, 70, 10, 0, 2 * Math.PI);
+    ctx.fillStyle = 'white';
+    ctx.fill();
+
+    // 눈동자 그리기
+    ctx.beginPath();
+    ctx.arc(170, 70, 5, 0, 2 * Math.PI);
+    ctx.arc(230, 70, 5, 0, 2 * Math.PI);
+    ctx.fillStyle = 'black';
+    ctx.fill();
+
+    // 입 그리기
+    ctx.beginPath();
+    ctx.arc(200, 120, 40, Math.PI / 7, (6 * Math.PI) / 7);
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+  </script>
+</body>
+</html>

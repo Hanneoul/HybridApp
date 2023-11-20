@@ -1,0 +1,15 @@
+{
+  "name": "lecture10",
+  "version": "1.0.0",
+  "description": "10주차 강의내용",
+  "main": "lecture10.js",
+  "scripts": {
+    "start": "node lecture10.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

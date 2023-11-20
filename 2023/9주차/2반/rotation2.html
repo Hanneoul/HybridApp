@@ -1,0 +1,35 @@
+<html>
+<body>
+    <canvas id="you_sihum_average_80" width="1024" height="768"></canvas>
+    <script>
+        //Canvas Context
+        const canvas = document.getElementById('you_sihum_average_80');
+        const context = canvas.getContext('2d');
+        var posX = 100;
+        var posY = 100;
+        var angle = 0;
+
+        //게임루프
+        setInterval(gameLoop,1000/60);
+        function gameLoop(){
+            context.clearRect(-101, -101, canvas.width, canvas.height);
+            drawRect(200,200,200,300,Math.PI/360 * angle,'#FF6F61');
+            drawRect(600,200,100,100,0,'navy');
+            angle++;
+        }
+
+        function drawRect(x,y,width,height,theta,color){
+            context.save();
+            context.beginPath();
+            context.translate(x,y);            
+            context.rotate(theta);
+            context.fillStyle = color; 
+            context.fillRect(-width/2,-height/2,width,height);
+            context.closePath();
+            context.restore();
+        }
+
+
+    </script>
+</body>
+</html>
